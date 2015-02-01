@@ -1,0 +1,2 @@
+﻿For running functional test follow instructions under it link http://www.specflow.org/getting-started/
+Firstly, try from step #7. If it doesn't run go from beginning.
