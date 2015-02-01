@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Just Eat";
+}
+@model JustEatDemo.Models.PostcodeModel
+
+@using (Ajax.BeginForm("Restaurants", new AjaxOptions
+{
+    HttpMethod = "GET",
+    UpdateTargetId = "RestaurantList",
+    OnBegin = "$('#imgLoading').show();",
+    OnComplete = "$('#imgLoading').hide();"
+}))
+{
+    <h2>Find Restaurants</h2>
+    @Html.Label("Postcode", "Enter postcode, e.g. 'se19':");
+    <div style="display:inline-table">
+        @Html.EditorFor(model => model.Postcode)<br/>
+        @Html.ValidationMessageFor(model => model.Postcode)
+    </div>
+    <input type="submit" value="Find" />
+    <img id="imgLoading" src="@Url.Content("content/images/preloader.gif")" class="loader" />
+}
+
+<div id="RestaurantList">
+</div>

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEatDemo", "JustEatDemo\JustEatDemo.csproj", "{4BBCC274-A977-4FB1-8829-7978EF7AE851}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEatDemo.Tests", "JustEatDemo.Tests\JustEatDemo.Tests.csproj", "{47FE31CE-5A3C-4F0E-A22B-676CECAD430B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{8CCC05C8-6324-48DC-BC3A-891D5AA15F7A}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{3F5EA01C-42A6-4DB4-82D5-1EB073ED2D1A}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\JustEatDemo-WAWS-dev.json = PublishScripts\Configurations\JustEatDemo-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A7587160-2AFE-457A-9DC6-B3DD06651704}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BBCC274-A977-4FB1-8829-7978EF7AE851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BBCC274-A977-4FB1-8829-7978EF7AE851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BBCC274-A977-4FB1-8829-7978EF7AE851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BBCC274-A977-4FB1-8829-7978EF7AE851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FE31CE-5A3C-4F0E-A22B-676CECAD430B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FE31CE-5A3C-4F0E-A22B-676CECAD430B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FE31CE-5A3C-4F0E-A22B-676CECAD430B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FE31CE-5A3C-4F0E-A22B-676CECAD430B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F5EA01C-42A6-4DB4-82D5-1EB073ED2D1A} = {8CCC05C8-6324-48DC-BC3A-891D5AA15F7A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,63 @@
+﻿@using JustEatDemo.Helpers
+@model IEnumerable<JustEatDemo.Models.RestaurantModel>
+
+@if (!Model.Any())
+{
+    <h3>There aren't any restaurants</h3>
+}
+else
+{
+    <h3>There are @Model.Count() restaurants</h3>
+    <table class="table">
+        <tr>
+            <th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RatingStars)
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.Image(Url.Content(item.LogoUrl), item.Name, new { width = "80", height = "80" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RatingStars)
+                </td>
+                <td>
+                    @Html.Link("Go to JustEat", item.Url, "_blank", new { })
+                </td>
+                <td id="ProductBtn_@item.Id">
+                    @using (Ajax.BeginForm("Products", new { Id = item.Id }, new AjaxOptions
+            {
+                HttpMethod = "GET",
+                UpdateTargetId = "ProductList_" + item.Id,
+                OnBegin = "$('#ProductBtn_" + item.Id + " #imgLoading').show();",
+                OnComplete = "$('#ProductBtn_" + item.Id + " #imgLoading').hide();"
+            }))
+                    {
+                        <input type="submit" value="View Products" />
+                        <img id="imgLoading" src="@Url.Content("content/images/preloader.gif")" class="loader" />
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <div id="ProductList_@item.Id" style="max-height:400px; overflow-y: scroll">
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+}
